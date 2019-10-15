@@ -7,7 +7,8 @@
 #
 # # Builder
 #
-# Here we will implement the so-called Builder Pattern: we will make an object, XmlDocument, that *builds* an XML file, which can contain arbitrary tags.
+# Here we will implement the so-called Builder Pattern: we will make an object,
+# XmlDocument, that *builds* an XML file, which can contain arbitrary tags.
 
 # Stuff you'll learn:
 # method_missing

@@ -3,10 +3,7 @@
 def reverser
   str = []
   rev = yield.split(' ')
-  rev.each do |word|
-    temp = word.reverse
-    str.push(temp)
-  end
+  rev.each { |word| str.push(word.reverse) }
   str.join(' ')
 end
 
@@ -15,7 +12,5 @@ def adder(num = 1, &block)
 end
 
 def repeater(num = 1, &block)
-  for i in (1..num) do
-    block.call
-  end
+  (1..num).each { |_element| block.call }
 end

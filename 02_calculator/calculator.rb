@@ -1,29 +1,23 @@
 # frozen_string_literal: true
 
-def add(num1, num2)
-  num1 + num2
+def add(first_number, second_number)
+  first_number + second_number
 end
 
-def subtract(num1, num2)
-  num1 - num2
+def subtract(first_number, second_number)
+  first_number - second_number
 end
 
 def sum(arr)
-  count = 0
-  arr.each do |i|
-    count += i
-  end
-  count
+  arr.inject(0) { |sum, n| sum + n }
 end
 
 def multiply(*numbers)
-  result = 1
-  numbers.each { |n| result *= n }
-  result
+  numbers.reduce(:*)
 end
 
-def power(num1, num2)
-  num1**num2
+def power(number, pow)
+  number**pow
 end
 
 def factorial(num)

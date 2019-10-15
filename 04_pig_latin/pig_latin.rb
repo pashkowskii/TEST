@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
+VOWELS = %w[a e i o u].freeze
+
 def translate(string)
-  vowels = %w[a e i o u A E I O U]
   phrase = string.split(' ')
   phrase.map! do |word|
     letters = word.split('')
-    find_vowel = letters.index do |letter|
-      vowels.include?(letter)
-    end
-
-    find_vowel += 1 if letters[find_vowel] == 'u'
-    letters.rotate!(find_vowel)
-    letters.push('ay')
-    letters.join
+    found_vowel = check_for_vowels(letters)
+    found_vowel += 1 if letters[found_vowel] == 'u'
+    letters.rotate!(found_vowel).push('ay').join
   end
-  phrase.each do |word|
-    word.downcase!.capitalize! if word =~ /[A-Z]/
-  end
+  check_for_uppercase_letter(phrase)
   phrase.join(' ')
 end
 
-translate('Accelerate through')
+def check_for_vowels(letters)
+  letters.index { |letter| VOWELS.include?(letter) }
+end
+
+def check_for_uppercase_letter(phrase)
+  phrase.each { |word| word.downcase!.capitalize! if word =~ /[A-Z]/ }
+end

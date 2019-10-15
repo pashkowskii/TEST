@@ -138,10 +138,10 @@ describe RPNCalculator do
       (4 - 5)
 
     calculator.evaluate("2 3 /").should ==
-      (2.0 / 3.0)
+      (2 / 3)
 
     calculator.evaluate("1 2 3 * + 4 5 - /").should ==
-      (1.0 + (2 * 3)) / (4 - 5)
+      (1 + (2 * 3)) / (4 - 5)
   end
 
 end
